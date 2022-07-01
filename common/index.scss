@@ -1,0 +1,63 @@
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// 渐变按钮
+@mixin button-gradient {
+    background: linear-gradient(90deg, #F79DA8 0%, #94E2FC 100%);
+}
+
+//固定渐变按钮
+
+@mixin fixd-button{
+    width: 690rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    background: linear-gradient(90deg, #F79DA8 0%, #94E2FC 100%);
+    border-radius: 46rpx;
+    font-size: 32rpx;
+    font-weight: normal;
+    color: #000;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 60rpx;
+    box-shadow: 4rpx 4rpx 10rpx #124;
+}
+
+// 全屏背景颜色
+@mixin full-screen-color($bgColor: #1D201F){
+    width: 100%;
+    min-height: 100vh;
+    background-color: $bgColor;
+} 
+
+
+//超出省略号 传的参数代表行数
+@mixin beyond-ellipsis($number: 1){
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $number;
+    line-clamp: $number;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+//标题小圆球 父元素需要定位
+@mixin ball-bg{
+    content: "";
+    width: 40rpx;
+    height: 40rpx;
+    background: linear-gradient(150deg, #fab8a8 0%, #94e3fd 100%);
+    border-radius: 50%;
+    position: absolute;
+    right: -14rpx;
+    bottom: -16rpx;
+    z-index: -1;
+}
