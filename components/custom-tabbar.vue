@@ -20,7 +20,7 @@
 					src="../static/home.png"
 				></image>
 			</u-tabbar-item>
-			<u-tabbar-item text="元宇宙">
+			<u-tabbar-item text="元宇宙" @click="jumbLink">
 				<image
 					class="u-page__item__slot-icon"
 					slot="active-icon"
@@ -54,7 +54,14 @@ export default {
         return{
             value6: 0
         }
-    }
+    },
+	methods:{
+		jumbLink(){
+			uni.navigateTo({
+				url:'/pages/login/test'
+			})
+		}
+	}
 }
 </script>
 

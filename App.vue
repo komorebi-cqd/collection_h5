@@ -23,15 +23,40 @@
 			}) 
 			
 			this.getNotificationEnabled();
+			this.watchPush();
 			// #endif
 		},
 		onShow: function() {
+			console.log(jpushModule);
 			console.log('App Show')
 		},
 		onHide: function() {
 			console.log('App Hide')
 		},
 		methods:{
+			//监听消息推送事件
+			watchPush() {
+			  jpushModule.addNotificationListener(result => {
+				jpushModule.setBadge(0);
+				if(result['notificationEventType'] === 'notificationOpened'){
+					const extras = result['extras'];
+					if(extras){
+						uni.navigateTo({
+							url:`/pages/index/description?nftRecording=${extras.nftRecording}&nftOriginator=${extras.nftOriginator}`
+						})
+					}else{
+						const reg = /action\=(\S*);component/i;
+						const link = result['android']['deeplink'];
+						const jumpLink = link.match(reg)[1];
+						if(jumpLink){
+							uni.navigateTo({
+								url:jumpLink
+							})
+						}
+					}
+				}
+			  });
+			},
 			// #ifdef APP-PLUS
 			getRegistrationID() { //获取registerID
 				jpushModule.getRegistrationID(result=>{
