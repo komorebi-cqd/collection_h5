@@ -1,16 +1,7 @@
 <template>
   <view class="description">
       <CustomNavBar :isGasket="false"></CustomNavBar>
-      <view class="collection-bg">
-          <view class="collection">
-                <view class="collection-border">
-                    <image class="details-img" src="../../static/test.png" mode="aspectFill"></image>
-                </view>
-          </view>
-          <view class="rarity" v-if="false">
-              <image mode="aspectFill" src="../../static/energy/rarity-icon.png"></image>
-          </view>
-      </view>
+    <NDetailsMainImg url="https://jiuselu.oss-cn-shenzhen.aliyuncs.com/images/ded95648f1ef4a6fb43dc2b97b86bae1.jpeg"/>
       <view class="collection-content">
         <view class="collection-int">
             <view class="int-title">无敌的我</view>
@@ -38,6 +29,7 @@
 </template>
 
 <script>
+import NDetailsMainImg from '../../components/n-details-main-img/n-details-main-img.vue'
 import CustomNavBar from '../../components/custom-nav-bar.vue'
 import FooterSection from '../../components/footer-section.vue'
 import QuantumText from '../../components/quantum-text.vue'
@@ -53,7 +45,7 @@ export default {
 
         }
     },
-    components: {CustomNavBar,FooterSection,QuantumText,BuyTip},
+    components: {CustomNavBar,FooterSection,QuantumText,BuyTip,NDetailsMainImg},
     methods:{
         handleBuy(){
             console.log(111);

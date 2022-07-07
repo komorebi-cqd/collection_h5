@@ -4,30 +4,30 @@
 	// #endif
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
-			// #ifdef APP-PLUS
-			//监听 极光推送连接状态
-			jpushModule.initJPushService(); //初始化
-			this.getRegistrationID();
+			// console.log('App Launch')
+			// // #ifdef APP-PLUS
+			// //监听 极光推送连接状态
+			// jpushModule.initJPushService(); //初始化
+			// this.getRegistrationID();
 			
-			uni.$on('connectStatusChange',(connectStatus)=>{ 
-			   var connectStr = ''
-			   if (connectStatus == true) {
-				   connectStr = '已连接'
-				   this.getRegistrationID()
-			   }else {
-				   connectStr = '未连接'
-			   }
-			   console.log('监听到了连接状态变化 --- ', connectStr) 
-			   this.connectStatus = connectStr
-			}) 
+			// uni.$on('connectStatusChange',(connectStatus)=>{ 
+			//    var connectStr = ''
+			//    if (connectStatus == true) {
+			// 	   connectStr = '已连接'
+			// 	   this.getRegistrationID()
+			//    }else {
+			// 	   connectStr = '未连接'
+			//    }
+			//    console.log('监听到了连接状态变化 --- ', connectStr) 
+			//    this.connectStatus = connectStr
+			// }) 
 			
-			this.getNotificationEnabled();
-			this.watchPush();
-			// #endif
+			// this.getNotificationEnabled();
+			// this.watchPush();
+			// // #endif
 		},
 		onShow: function() {
-			console.log(jpushModule);
+			// console.log(jpushModule);
 			console.log('App Show')
 		},
 		onHide: function() {
